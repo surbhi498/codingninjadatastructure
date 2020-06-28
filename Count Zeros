@@ -1,0 +1,38 @@
+
+int countZeros(int n) {
+ 
+    // Write your code here
+int ans = 0;
+if(n==0)
+return 0;
+    
+else{
+    
+int ld = n%10;   
+//int sa = N/10;    
+ans = countZeros(n/10); 
+
+if(ld==0){    
+    
+//int fg = ans + 1;
+ans+=1;
+return ans;    
+//return fg;    
+    
+    
+}    
+/*else {
+    
+ return (ans);   
+    
+    
+} */   
+    
+}    
+    
+    
+    
+    
+}
+
+
