@@ -1,0 +1,23 @@
+#include <math.h> 
+float geometricSum(int k) {
+    // Write your code here
+if(k==0)
+return 1;    
+    
+else{
+int d = pow(2,k);    
+double ld = ((double)1/d);
+double sum = ld + geometricSum(k-1);    
+return sum;    
+//return ((float)1/d) + geometricSum(k-1);    
+    
+    
+}    
+    
+    
+    
+    
+    
+}
+
+
