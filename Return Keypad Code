@@ -1,0 +1,104 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+using namespace std;
+
+
+//using namespace std;
+string hashTable[10] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};    
+int keypad(int num, string output[]){
+
+    /* Insert all the possible combinations of the integer number into the output string array. You do not need to
+    print anything, just return the number of strings inserted into the array.*/
+ /* if(num==0 || num==1){
+        output[0]="";
+        return 1;
+    }
+    int k=0;
+    string temp[1000]; // make a new array of any size prefer to 1000;
+    int sans=keypad(num/10,temp); // get all the answers of the key (23) if the key is 234;
+    string lastkey=hashTable[num%10]; // the last element is 4 so get the keys of 4.
+    for(int i=0;i<lastkey.length();i++){
+        for(int j=0;j<sans;j++){
+            output[k]=temp[j] + lastkey[i];  // now just copy all elements with last key in the output
+            k++;
+        }
+    }
+    return k;*/
+//string num12;  
+//int len;    
+int count = 0;   
+int k =0;    
+//int smallOutputSize;  
+//int yh =0;
+//int h =0;    
+string temp[1000];    
+string hashTable[10] = {"", "", "abc", "def", "ghi", "jkl", 
+                               "mno", "pqrs", "tuv", "wxyz"};     
+if(num<=1)
+{
+    
+output[0] = "";
+return 1;   
+    
+    
+}    
+else
+{
+/*while(num>0)
+{
+
+count++;
+num = num/10;    
+    
+    
+    
+}    
+count--;    
+int t = pow(10,count);*/    
+//int num1 = num/10;    
+//int num2 = num%10;  
+ 
+//string smallString = input.substr(1);
+    string newoutput[10000];
+int smallOutputSize = keypad(num/10, newoutput);
+string num12 = hashTable[num%10];  
+int len = num12.size();       
+int yh = 0;
+// for(int r = 0;r<(len);r++){   
+//    //int yh;  
+// yh += smallOutputSize;
+// for (int i = 0; i < smallOutputSize; i++) {
+// 		output[i + yh] = output[i];
+// 	}    
+// }
+//int bn = output.size(); 
+int h ;    
+for(int g =0;g<len;g++){
+ //int h; 
+//h+=k;     
+for(int t =0;t<smallOutputSize;t++){    
+    
+output[k]=newoutput[t] + num12[g];    
+k++;    
+    
+}    
+    
+    
+}   
+    
+/*for(int i=0;i<num12.length();i++){
+        for(int j=0;j<smallOutputSize;j++){
+            output[k]=temp[j] + num12[i];  // now just copy all elements with last key in the output
+            k++;
+        }
+    }    
+//return output;    
+    
+    
+}    
+return k;  */
+    
+}   
+return k;    
+}
