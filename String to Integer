@@ -1,0 +1,32 @@
+
+
+#include <bits/stdc++.h>
+#include <iostream> 
+#include <string.h> 
+#include<stdio.h>
+using namespace std; 
+
+int stringToNumber(char input[]) {
+    // Write your code here
+
+int n = strlen(input); 
+int u = n-1;    
+if(n==1){    
+int a = input[0];
+int b = a-'0';    
+ return b;   
+}    
+
+else{
+    
+int b = stringToNumber(input+1);
+int h =  input[0];   
+int v = h-'0';    
+int x = v * pow(10,u)+ b;    
+return x;    
+    
+    
+    
+    
+}
+}
