@@ -1,0 +1,53 @@
+
+#include <iostream>
+using namespace std;
+//void printSubsetSumToK(int input[], int size, int k);
+void helper(int input[], int size, int k, int output[], int m);
+void printSubsetSumToK(int input[], int size, int k)
+{
+    
+    // Write your code here
+    int output[1000];
+    helper(input, size, k, output, 0);
+}
+
+void helper(int input[], int size, int k, int output[], int m)
+{
+    if (size == 0)
+    {
+
+        if (k == 0)
+        {
+
+            for (int j = 0; j < m; j++)
+            {
+
+                cout << output[j] << " ";
+            }
+            cout << endl;
+            //return; //just needed to add this return to return after printing
+            	    //otherwise the code will run further
+        }
+        else
+        {
+
+           // return;
+        }
+    }
+    //this block of code should be out of above if condition
+else {
+    int newoutput[10000];
+    int ind = input[0];
+    for (int h = 0; h < m; h++)
+    {
+
+        newoutput[h] = output[h];
+    }
+    newoutput[m] = input[0];
+    helper(input + 1, size - 1, k - ind, newoutput, m + 1);
+    helper(input + 1, size - 1, k, output, m);
+    
+    
+}    
+    
+}
