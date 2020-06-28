@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+using namespace std;
+string hashTable[10] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"}; 
+void helper(int num,string output){
+    if(num==0){
+        cout<<output<<endl;
+    }   
+    int last_d = num%10;
+    int i=0;
+    while(i<hashTable[last_d].size()){
+		helper(num/10,hashTable[last_d][i]+output);
+        i++;
+    }
+}
+
+void printKeypad(int num){
+    string output="";
+    helper(num,output);
+
+}
