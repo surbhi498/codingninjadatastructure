@@ -1,0 +1,65 @@
+
+#include <stdio.h> 
+#include <iostream> 
+#include <string.h> 
+
+bool helper(char input[],int start , int end){
+    
+int n = strlen(input); 
+bool bp;    
+/*if(start>=end){
+    
+return true;    
+    
+}*/
+if(n==0||n==1)
+return true;    
+//int start =0;    
+//int end = n-1; 
+    
+  
+if(input[start]==input[end]){
+    
+bp =helper(input,start+1,end-1);       
+//return true;  
+  
+    
+    
+} 
+else{
+    
+return false;    
+    
+    
+    
+}    
+
+
+//bp =helper(input,start+1,end-1);     
+return bp;    
+    
+    
+    
+    
+   
+    
+    
+    
+}
+
+
+
+
+bool checkPalindrome(char input[]) {
+    // Write your code here
+
+int n = strlen(input);    
+bool hj = helper(input,0,n-1);    
+return hj;    
+    
+    
+    
+    
+    
+}
+
