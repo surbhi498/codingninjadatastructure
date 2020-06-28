@@ -1,0 +1,28 @@
+int sum(int input[], int n) {
+  /* Don't write main().
+     Don't read input, it is passed as function argument.
+     Return output and don't print it.
+     Taking input and printing output is handled automatically.
+  */
+int sum1 =0;
+int sum2=0;    
+int i=0;
+int j = n-1;    
+if(n==0)
+return 0;
+if(n==1){
+sum1=input[0];
+return sum1; 
+}    
+else
+{    
+return(input[0]+=sum(input+1,n-1));
+//sum2+=sum1;
+    
+ 
+    
+    
+    
+    
+}
+}
