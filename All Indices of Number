@@ -1,0 +1,83 @@
+
+int allIndexes(int input[], int size, int x, int output[]) {
+  /* Don't write main().
+     Don't read input, it is passed as function argument.
+     Save all the indexes in the output array passed and return the size of output array.
+     Taking input and printing output is handled automatically.*/
+  
+int i;
+int j = 0;    
+int t =0; 
+int r =0;    
+if(size==0)
+return 0;
+
+
+/*if(input[0]==x){
+    
+output[t]=0;  
+t++;    
+//return 0;    
+}*/
+   
+i=allIndexes(input+1,size-1,x,output);      
+for(int l=0;l<i;l++){
+    
+output[l]=output[l]+1;    
+    
+    
+    
+}
+if(input[0]==x){
+//int r = i-1;    
+int temp = output[r];
+while(r<(i)){
+ 
+int  temp1 = output[r+1];       
+
+output[r+1] =temp;  
+    
+temp = temp1;    
+r++;    
+    
+    
+}    
+output[0]=0;        
+return (i+1);    
+    
+}  
+else{
+return(i);
+    
+}
+return(i+1);    
+}
+
+/*int allIndexes(int input[], int size, int x, int output[]) {
+  /* Don't write main().
+     Don't read input, it is passed as function argument.
+     Save all the indexes in the output array passed and return the size of output array.
+     Taking input and printing output is handled automatically.
+  */
+/*if(size==0)
+    return 0;
+int ans=allIndexes(input+1,size-1,x,output);
+      for(int i=0;i<ans;i++)
+           output[i]=output[i]+1;
+    if(input[0]==x)
+    {
+        
+    int i;
+    for(i=ans-1;i>=0;i--)
+    {
+        output[i+1]=output[i];
+    }
+        output[0]=0;
+        return ans+1;
+}
+    
+    else{
+      
+        return ans;
+    }
+}*/
