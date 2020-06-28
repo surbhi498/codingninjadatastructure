@@ -1,0 +1,26 @@
+int multiplyNumbers(int m, int n) {
+    // Write your code here
+int t =1;
+
+
+if(n==1)
+return m;    
+
+else{
+    
+int t = m+multiplyNumbers(m,n-1);
+return (t);    
+    
+    
+    
+    
+    
+}    
+    
+    
+    
+    
+    
+}
+
+
