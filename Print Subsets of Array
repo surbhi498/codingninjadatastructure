@@ -1,0 +1,73 @@
+/*void helper(int input[],int start,int size,int output[],int osize)
+{
+    if(start==size)
+    {
+        for(int i=0;i<osize;i++)
+        {
+            cout<<output[i]<<" ";
+        }
+        cout<<endl;
+        return;
+    }
+    int smalloutput[40],smallsize=0;
+    helper(input,start+1,size,output,osize);
+    int i;
+    for(i=0;i<osize;i++)
+    {
+        smalloutput[i]=output[i];
+    }
+    smalloutput[i]=input[start];
+    helper(input,start+1,size,smalloutput,osize+1);
+}*/
+#include <iostream>
+#include <string>
+#include <math.h>
+#include<stdio.h>
+void helper(int input[],int size,int output[],int m)
+{
+ if(size<1)   
+ {
+     
+for(int j =0;j<(m);j++)
+{
+    
+cout<<output[j]<<" ";    
+    
+    
+}    
+cout<<endl;     
+     
+     
+ }   
+    
+else
+{
+int newoutput[100000];  
+for(int g =0;g<m;g++)
+{
+    
+newoutput[g]=output[g];    
+    
+}    
+newoutput[m]=input[0];    
+helper(input+1,size-1,newoutput,m+1);    
+helper(input+1,size-1,output,m);    
+    
+    
+    
+    
+    
+}    
+    
+    
+    
+    
+}    
+
+
+
+void printSubsetsOfArray(int input[], int size) {
+	// Write your code here
+    int output[1000];
+    return helper(input,size,output,0);
+}
