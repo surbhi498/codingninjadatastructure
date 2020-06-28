@@ -1,0 +1,23 @@
+
+int sumOfDigits(int n) {
+    // Write your code here
+if(n==0)
+return 0;    
+    
+else{
+    
+int ld = n%10;
+int sum = ld + sumOfDigits(n/10);    
+return sum;    
+    
+    
+    
+}    
+    
+    
+    
+    
+    
+}
+
+
