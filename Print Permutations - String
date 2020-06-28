@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+using namespace std;
+void printPermutations(string input);
+void helper(string input,string output)
+{
+
+    int n= input.size();
+    if(n==0)    
+    {
+
+        cout<<output<<endl;    
+        return;    
+
+    }    
+    else
+    {
+
+        for(int g =0;g<n;g++)    
+        {
+            //int bn; 
+            string newoutput;
+            char ch = input[g];
+            newoutput = output+ch;
+            int end1 = g;
+            int end2 = (n-1)-(g+1)+1;    
+            string gi = input.substr(0, g) + input.substr(g+1, end2); 
+            // newoutput[0]=ch+ output;    
+            helper(gi,newoutput);      
+
+
+
+
+        }    
+
+    }    
+
+
+
+
+
+}
+
+
+
+
+
+void printPermutations(string input){
+
+    /* Don't write main() function.
+	 * Don't read input, it is passed as function argument.
+	 * Print output as specified in the question
+	*/
+    string output = "";  
+
+    helper(input,output);    
+
+
+}
