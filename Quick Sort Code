@@ -1,0 +1,151 @@
+
+#include <iostream> 
+#include <string.h>
+#include<stdio.h>
+using namespace std; 
+
+int partition(int input[],int si,int end);
+void quickSort1(int input[],int si,int end);
+void quickSort(int input[], int size) {
+    /* Don't write main().
+     Don't read input, it is passed as function argument.
+     Change in the given array itself.
+     Taking input and printing output is handled automatically.
+  */
+    quickSort1(input,0,size-1);
+
+
+}
+
+void quickSort1(int input[],int si,int end)
+{
+    int pi;    
+    if(si>=end)    
+        return;    
+
+    pi = partition(input,si,end);    
+    quickSort1(input,si,pi-1);    
+    quickSort1(input,pi+1,end);    
+
+}    
+
+int partition(int input[],int si,int end)
+{
+
+    int countsmallele=0;
+    int i = si;
+    int j = end;    
+    int pivotpos;
+    int pivot = input[si];    
+    for(int j=(si+1);j<=end;j++){
+
+        if(input[j]<=pivot) {
+
+            countsmallele++;    
+
+
+
+        }   
+
+
+
+    }    
+    pivotpos = si+countsmallele;    
+    int temp = pivot;
+    input[si] = input[pivotpos];
+    input[pivotpos]=temp;   
+while(i<=pivotpos && j>=pivotpos){    
+if(input[i]<=pivot)
+{
+
+i++;    
+
+}    
+
+else if(input[j]>pivot)
+{
+
+j--;    
+
+
+}    
+
+else{
+if(i<pivotpos && j>pivotpos){    
+int temp=input[i];
+input[i]=input[j];    
+input[j]=temp;    
+i++;
+j--;    
+}    
+}    
+} 
+
+    /*while(i<=pivotpos && j>=pivotpos){    
+        while(input[i]<=pivot)
+        {
+
+            i++;    
+
+        }    
+
+        while(input[j]>pivot)
+        {
+
+            j--;    
+
+
+        }    
+
+        if(i<pivotpos && j>pivotpos){
+
+            int temp=input[i];
+            input[i]=input[j];    
+            input[j]=temp;    
+            i++;
+            j--;
+
+        }        
+
+    } */ 
+
+
+    return pivotpos;    
+
+
+} 
+
+/*int partition(int input[],int si,int end)
+{
+int i = si;
+int pivotpos=si;
+int j = end;
+int pivot=input[si];
+for(int j =si+1;j<=end;j++){
+if(input[j]<=pivot)
+{
+
+i++;
+int temp = input[i];
+input[i] = input[j];
+input[j]=temp;
+
+}
+}
+int temp1=pivot;
+input[pivotpos]=input[i];
+input[i]=temp1;
+
+return i;
+
+
+}*/
+
+
+
+
+
+
+
+
+
