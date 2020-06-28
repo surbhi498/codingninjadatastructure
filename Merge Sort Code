@@ -1,0 +1,142 @@
+
+
+#include <iostream> 
+#include <string.h>
+#include<stdio.h>
+using namespace std; 
+
+void mergeSort1(int input[], int si,int end);
+void merge(int input[],int start,int end);
+
+
+void mergeSort(int input[], int size){
+	// Write your code here
+mergeSort1(input,0,size-1);
+
+}
+void mergeSort1(int input[], int si,int end)
+{
+int mid;    
+//int si =0;    
+//int end = size-1;    
+if(si>=end)
+ {
+     
+     
+return;     
+     
+ }     
+    
+else
+{
+mid = si + (end - si) / 2;    
+mergeSort1(input,si,mid);
+mergeSort1(input,mid+1,end);
+merge(input,si,end);    
+    
+}        
+    
+    
+} 
+
+void merge(int input[],int start,int end)
+{
+    
+int mid = start + (end - start) / 2;
+int input1[end-start+1]; 
+int n = (end-start+1);    
+int k =0;    
+int i = start;
+int j = (mid+1);
+int n1 = end-j+1;   
+int r = mid-start+1;    
+while(i<r && j<n1)
+{
+if(input[i]>input[j]) {
+    
+input1[k]=input[j];    
+k++;    
+j++;    
+    
+}   
+    
+else
+{
+    
+    
+input1[k]=input[i];    
+k++;    
+i++;    
+    
+}    
+    
+    
+    
+    
+}    
+if(i==(r)&&j<n1){
+while(j<n1){    
+input1[k]=input[j];
+k++;
+j++;    
+}    
+    
+}  
+    
+   
+    
+
+if(j==(n1)&& i<r){
+while(i<r){    
+input1[k]=input[i];    
+k++;
+i++;    
+}    
+}   
+k=0;    
+for(int y=start;y<=end;y++)
+{
+    
+input[y]=input1[k];    
+k++;    
+} 
+}    
+/*void merge(int input[],int start,int end)
+{
+
+    int input1[end-start+1];
+    int i=start;
+    int mid=(start+end)/2;
+    int j=mid+1;
+    int k=0;
+    while(i<=mid && j<=end){
+        if(input[i]<input[j]){
+            input1[k]=input[i];
+            i++;
+            k++;
+        }else{
+            input1[k]=input[j];
+            j++;
+            k++;
+        }
+    }
+    for( ; i<=mid;i++){
+        input1[k]=input[i];
+        k++;
+    }
+    for( ; j<=end; j++){
+        input1[k]=input[j];
+        k++;
+    }
+
+    k=0;
+    for(int i=start;i<=end;i++){
+        input[i]=input1[k++];
+    }
+    return;
+}   */     
+    
+    
+    
+   
+
