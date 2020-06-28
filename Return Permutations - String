@@ -1,0 +1,65 @@
+#include <string>
+using namespace std;
+
+/*int returnPermutations(string input, string output[]){
+    /* Don't write main() function.
+	 * Don't read input, it is passed as function argument.
+	 * Print output as specified in the question
+	*/
+/*int returnPermutations(string input, string output[])
+{      
+    if(input.size()==0)
+    {
+        output[0]= "";    
+        return 1;    
+
+    }  
+else{
+    string newoutput[10000]; //dummy string for recursive  answers   
+    int smallans = returnPermutations(input.substr(1),newoutput); // for recursive ans
+    int row =0 ; //for output rows
+    for(int i=0;i<smallans;i++){
+        for(int j=0;j<=newoutput[i].size();j++){
+            output[row++] = newoutput[i].substr(0,j)+input[0]+newoutput[i].substr(j);
+        }
+    }
+    return row;
+}
+
+}*/
+int returnPermutations(string input, string output[]){
+    /* Don't write main() function.
+	 * Don't read input, it is passed as function argument.
+	 * Print output as specified in the question
+	*/
+   int bn;
+    int k =0;    
+    if(input.size()==0)
+    {
+        output[0]= "";    
+        return 1;    
+
+    } 
+    else{
+    string newoutput[10000];    
+    int n = input.size();  
+
+    for(int g =0;g<n;g++)    
+    {
+        //int bn;    
+        char ch = input[g];
+        int end1 = g;
+        int end2 = (n-1)-(g+1)+1;    
+        string gi = input.substr(0, g) + input.substr(g+1, end2); 
+       // newoutput[0]=ch+ output;    
+        bn = returnPermutations(gi,newoutput);   
+        for(int j =0;j<bn;j++){
+        
+            output[k++]= ch + newoutput[j];    
+
+        }
+        }    
+    
+    }     
+    return k;
+}
