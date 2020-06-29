@@ -1,0 +1,82 @@
+#include <string.h>
+using namespace std;
+/*void prints(string input, string output)
+{
+    if(input[0]=='\0')
+    {
+        cout<<output<<endl;
+        return;
+    }
+    string o1;
+    string o2;
+    char c=int(input[0])-48+96;
+    o1=output+c;
+    prints(input.substr(1),o1);
+    if(input[1]!='\0')
+    {
+        int sec=stoi(input.substr(0,2));
+            if(sec>=10 && sec<=26)
+            {
+                char d=sec+96;
+                o2=output+d;
+                prints(input.substr(2),o2);
+            }
+    }
+    
+}*/
+void prints(string input,string output)
+{
+if(input[0]=='\0')
+{
+    
+cout<<output<<endl;    
+    
+    
+}    
+    
+else{
+string o1;
+string o2;    
+char gh = input[0];
+int fg= gh-'0';
+char od = 'a'+fg-1;    
+o1=output+od;    
+prints(input.substr(1),o1);
+char cv = input[1];    
+int yu = cv-'0';
+int num = fg*10+yu;
+if(num>=10&&num<=26)
+{
+    
+char tv='a'+num-1;    
+o2=output+tv;    
+prints(input.substr(2),o2);    
+    
+    
+}    
+    
+else{
+    
+return;    
+    
+    
+    
+}    
+    
+    
+}    
+    
+    
+    
+    
+    
+}    
+    
+void printAllPossibleCodes(string input) {
+    /*
+    Given the input as a string, print all its possible combinations. You do not need to return anything.
+    */
+    string output="";
+    prints(input,output);
+}
+
