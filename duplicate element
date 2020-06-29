@@ -1,0 +1,50 @@
+// arr - input array
+// size - size of array
+
+int DuplicateNumber(int arr[], int size){
+    /* Don't write main().
+     * Don't read input, it is passed as function argument.
+     * Return output and don't print it.
+     * Taking input and printing output is handled automatically.
+     */
+int n = size-1;
+int count[n]; 
+int g;    
+for(int t =0;t<n;t++)
+{
+    
+count[t]=0;    
+    
+    
+}    
+    
+for(int y=0;y<size;y++)
+{
+    
+    
+count[arr[y]]++;    
+    
+    
+    
+}    
+    
+for(int y=0;y<size;y++)
+{
+if(count[arr[y]]==2)
+{
+    
+ g= arr[y];    
+break;    
+    
+    
+}    
+    
+    
+    
+    
+}    
+    
+return g;    
+    
+    
+}
