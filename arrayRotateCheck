@@ -1,0 +1,89 @@
+int arrayRotateCheck(int *input, int size)
+{
+    //Write your code here
+if(size==1)
+{
+    
+return 0;    
+    
+    
+}    
+int i;
+for(i=1;i<size;i++)
+{
+    
+if(input[i-1]<=input[i]){
+    
+//do nothing;    
+    
+    
+}    
+else
+{
+    
+break;    
+    
+    
+    
+    
+}    
+    
+    
+}    
+if(i<size){
+return (i);
+}
+    
+else
+{
+    
+return 0;    
+    
+    
+}    
+
+
+
+}
+
+
+
+
+
+
+
+
+
+ /*int temp; 
+    int k =0;    
+    while(k<d)
+    {
+        int i=0;
+        temp = input[0];
+        //i=1;    
+        while(i<n)    
+        {
+
+            if(i!=(n-1)){   
+                //temp = input[0];    
+                input[i]=input[i+1];   
+            }
+            else{
+
+
+                break;    
+
+
+
+            }
+
+            i++;    
+
+
+
+        }    
+
+        input[i]=temp;   
+
+        k++;    
+    }  */  
