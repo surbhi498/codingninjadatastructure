@@ -1,0 +1,209 @@
+#include <string.h>
+#include<cstring>
+using namespace std;
+
+int getCodes(string input, string output[10000]) {
+    /*
+    You are given the input text and output string array. Find all possible codes and store in the output string array. Don’t print the codes.
+    Also, return the number of codes return to the output string. You do not need to print anything.
+    */
+        string result1[10000];
+        string result2[10000];    
+    int n=input.size();  
+    int ans=0;
+    int ans1=0; 
+    int row=0;
+    //int row1=0;
+    //int row2=0;
+    if(input[0]=='\0')
+    {
+	 	output[0]="";
+	 	//return 1;*/
+        return 1;   
+
+    }   
+  else if(n==1)
+    {
+        char ch = input[0];    
+        int gh = ch-'0';    
+        char od = 'a'+gh-1;    
+        output[0]=od;    
+        output[1]='\0';  
+     return 1;   
+    }    
+    else{
+        
+        
+
+        char ind = input[0];    
+        int jk = ind-'0';
+        char ln = 'a'+jk-1;
+        ans = getCodes(input.substr(1),result1);  
+        for(int i=0;i<ans;i++){
+        output[row]=ln+result1[i];
+        row++;    
+        }       
+        char df = input[1];
+        int yu=df-'0';
+        int num = jk*10+yu;
+        if(num>=10 && num<=26){
+
+
+            char rt = 'a'+num-1;    
+            ans1 = getCodes(input.substr(2),result2);  
+            for(int j=0;j<ans1;j++)
+            {
+                
+             output[row]=rt+result2[j];   
+             row++;   
+                
+            }    
+          //  output=result2+rt;    
+
+        }    
+
+        //int ans1 =   
+
+    }    
+   // int  bn = ans+ans1;   
+    return ans+ans1;  
+
+
+}
+
+/*#include <string.h>
+#include<cstring>
+using namespace std;
+
+int getCodes(string input, string output[10000]) {
+    /*
+    You are given the input text and output string array. Find all possible codes and store in the output string array. Don’t print the codes.
+    Also, return the number of codes return to the output string. You do not need to print anything.
+    */
+
+   /* int n=input.size();  
+    int ans=0;
+    int ans1=0; 
+    int row1=0;
+    int row2=0;
+    if(input[0]=='\0')
+    {
+       output[0]="";
+	 	return 1;
+        //return 0;    
+
+    }   
+    else if(n==1)
+    {
+        char ch = input[0];    
+        int gh = ch-'0';    
+        char od = 'a'+gh-1;    
+        output[0]=od;    
+        output[1]='\0';  
+        return 1;   
+    }    
+    else{
+
+
+        string result1[10000];
+        string result2[10000];    
+        char ind = input[0];    
+        int jk = ind-'0';
+        char ln = 'a'+jk-1;
+        ans = getCodes(input.substr(1,n),result1);  
+        for(int i=0;i<ans;i++){
+            output[row1]=ln +result1[i];
+            row1++;    
+        }       
+        char df = input[1];
+        int yu=df-'0';
+        int num = jk*10+yu;
+        if(num<=26){
+
+
+            char rt = 'a'+num-1;    
+            ans1 = getCodes(input.substr(2,n),result2);  
+            for(int j=0;j<ans1;j++)
+            {
+
+                output[row2]=rt+result2[j];   
+                row2++;   
+
+            }    
+           // output=result2+rt;    
+
+        }    
+        else 
+            //int ans1 =    
+        {
+
+
+            return 0;   
+}    
+
+}    
+    //int  bn = row1+row2;   
+    return (ans+ans1);        
+
+}*/
+ /*string result1[10000];
+        string result2[10000];    
+    int n=input.size();  
+    int ans=0;
+    int ans1=0; 
+    int row=0;
+    if(input[0]=='\0')
+    {
+	 	output[0]="";
+	 	return 1;
+        //return 0;   
+
+    }   
+  else if(n==1)
+    {
+        char ch = input[0];    
+        int gh = ch-'0';    
+        char od = 'a'+gh-1;    
+        output[0]=od;    
+        output[1]='\0';  
+     return 1;   
+    }    
+    else{
+        
+        
+
+        char ind = input[0];    
+        int jk = ind-'0';
+        char ln = 'a'+jk-1;
+        ans = getCodes(input.substr(1),result1);  
+        for(int i=0;i<ans;i++){
+        output[row]=ln+result1[i];
+        row++;    
+        }       
+        char df = input[1];
+        int yu=df-'0';
+        int num = jk*10+yu;
+        if(num>=10 && num<=26){
+
+
+            char rt = 'a'+num-1;    
+            ans1 = getCodes(input.substr(2),result2);  
+            for(int j=0;j<ans1;j++)
+            {
+                
+             output[row]=rt+result2[j];   
+             row++;   
+                
+            }    
+          //  output=result2+rt;    
+
+        }    
+
+        //int ans1 =   
+
+    }    
+   // int  bn = ans+ans1;   
+    return ans+ans1;  
+
+
+}*/
