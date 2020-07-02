@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+
+int linearSearch(int input[],int size,int x){
+    
+    
+for(int j = 0;j<size;j++){
+    
+if(input[j]==x){
+    
+return j;    
+    
+    
+    
+    
+    
+}    
+    
+    
+    
+    
+}    
+    
+ return -1;   
+    
+    
+}  
+    
+    
+    
+
+
+
