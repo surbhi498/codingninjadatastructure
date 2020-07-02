@@ -1,0 +1,135 @@
+// input1 - first array
+// size1 - size of first array
+// input2 - second array
+// size2 - size of second array
+// output - array in which sum is to be stored
+
+void sumOfTwoArrays(int input1[], int size1, int input2[], int size2, int output[]){
+    /* Don't write main().
+     * Don't read input, it is passed as function argument.
+     * No need to print or return the output. Just fill the output in given output array.
+     * Taking input and printing output is handled automatically.
+     */
+int max;
+if(size1>size2){
+    
+max = size1;    
+    
+}
+else{
+    
+max = size2;    
+    
+}  
+int i =size1-1;
+int j = size2-1;  
+int k = (max+1)-1; 
+int carry = 0;    
+while((i>=0&&j>=0)&&k>=0){
+int sum = input1[i] + input2[j] + carry;
+ if(sum>=10){
+carry = sum/10; 
+output[k] = sum % 10;    
+k--;     
+i--;     
+j--;
+     
+     
+ }  
+    
+else{
+ carry = 0;    
+output[k] =sum;    
+k--;    
+i--;    
+j--;    
+    
+}    
+    
+    
+    
+}    
+if(i!=-1){
+    
+while(i>=0 && k>=0)  { 
+if(carry){
+ int temp;
+ temp = input1[i]+carry;  
+  if(temp>=10){
+    carry = temp/10;   
+   int sum = temp%10;   
+    output[k] = sum;  
+   i--;
+   k--;   
+  }  
+  else{  
+  carry = 0;    
+ output[k] = temp; 
+  i--;
+  k--;    
+  }   
+}  
+else{    
+output[k] = input1[i];    
+i--;    
+k--;    
+}    
+    
+}    
+    
+    
+    
+    
+    
+}    
+else if(j!= -1){
+    
+while(j>=0 && k>=0)  { 
+if(carry){
+ int temp;
+ temp = input2[j]+carry;  
+  if(temp>=10){
+    carry = temp/10;   
+   int sum = temp%10;   
+    output[k] = sum;  
+      
+  }  
+  else{  
+  carry = 0;    
+ output[k] = temp;
+ j--;
+ k--;     
+  }   
+}      
+    
+else{    
+output[k] = input2[j];    
+j--;    
+k--;    
+}    
+    
+}    
+  
+    
+    
+    
+    
+}        
+    
+if(k==0){
+if(carry)    
+output[k]=1;    
+    
+    
+    
+}
+else{
+    
+output[k]=0;    
+    
+    
+}    
+    
+    
+    
+}
