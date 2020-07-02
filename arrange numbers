@@ -1,0 +1,76 @@
+
+
+void arrange(int arr[],int n){
+ 
+  /* Don't write main().
+     Don't read input, it is passed as function argument.
+     Arrange elements in the array "arr" given as input.
+     Taking input and printing output is handled automatically.
+  */
+int temp1;
+int k; 
+int l;    
+int count = 0;
+int count2 = 0;    
+for(int i=0;i<n;i++){
+    
+temp1 = 2*i+1;  
+arr[i] = temp1;    
+if(temp1== n){
+    
+count = 1;
+k = i+1;    
+break;    
+    
+}    
+else if(temp1>n){
+    
+count2 = 1;
+l = i;    
+break;    
+    
+    
+    
+}
+    
+}
+if(count){
+arr[k] = n-1;  
+int t = n-1;  
+k = k + 1;    
+while(k<n){
+    
+
+t = t-2;   
+arr[k] = t;   
+k++;    
+    
+    
+    
+} 
+}    
+else if(count2)
+{
+//arr[l] = n; 
+int r = n;    
+while(l<n){
+    
+arr[l] = r;  
+r = r - 2;    
+l++;    
+//arr[l] = r;    
+    
+    
+}    
+    
+    
+    
+    
+    
+}    
+    
+    
+    
+    
+}
+
