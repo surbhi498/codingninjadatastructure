@@ -1,0 +1,50 @@
+void pairSum(int input[], int size, int x) {
+    /* Don't write main().
+     * Don't read input, it is passed as function argument.
+     * Print the output and don't return it.
+     * Taking input is handled automatically.
+ 
+*/
+    
+for(int j =0;j<size;j++){
+     
+for(int i = j+1;i<size;i++){
+    
+    
+if((input[j]+input[i])==x){
+    
+if(input[i]>input[j]){
+    
+cout<<input[j]<<" "<<input[i]<<endl;    
+    
+    
+    
+}   
+else{
+    
+    
+cout<<input[i]<<" "<<input[j]<<endl;    
+    
+    
+}    
+    
+    
+    
+}    
+    
+    
+    
+    
+}     
+     
+     
+     
+     
+ }   
+    
+    
+    
+    
+    
+
+}
