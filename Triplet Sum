@@ -1,0 +1,144 @@
+// arr - input array
+// size - size of array
+// x - sum of triplets
+
+void FindTriplet(int input[], int size, int x) {
+    /* Don't write main().
+     * Don't read input, it is passed as function argument.
+     * Print output and don't return it.
+     * Taking input is handled automatically.
+     */
+for(int j =0;j<size;j++){
+     
+for(int i = j+1;i<size;i++){
+    
+for(int k = i+1;k<size;k++){    
+if((input[j]+input[i]+input[k])==x){
+    
+if(input[i]>input[j]){
+if(input[i]>input[k]){  
+if(input[j]>input[k]) 
+{  
+cout<<input[k]<<" "<<input[j]<<" "<<input[i]<<endl;    
+    
+    
+    
+} 
+    
+else
+{
+    
+    
+ cout<<input[j]<<" "<<input[k]<<" "<<input[i]<<endl;    
+    
+    
+    
+}    
+    
+    
+}
+
+else{
+ if(input[j]>input[i]) 
+{  
+cout<<input[i]<<" "<<input[j]<<" "<<input[k]<<endl;    
+    
+    
+    
+} 
+    
+else
+{
+    
+    
+ cout<<input[j]<<" "<<input[i]<<" "<<input[k]<<endl;    
+    
+    
+    
+}       
+    
+    
+    
+    
+    
+}    
+    
+    
+}    
+else{
+    
+if(input[j]>input[k]){  
+if(input[i]>input[k]) 
+{  
+cout<<input[k]<<" "<<input[i]<<" "<<input[j]<<endl;    
+    
+    
+    
+} 
+    
+else
+{
+    
+    
+ cout<<input[i]<<" "<<input[k]<<" "<<input[j]<<endl;    
+    
+    
+    
+}    
+    
+    
+}
+
+else{
+ if(input[j]>input[i]) 
+{  
+cout<<input[i]<<" "<<input[j]<<" "<<input[k]<<endl;    
+    
+    
+    
+} 
+    
+else
+{
+    
+    
+ cout<<input[j]<<" "<<input[i]<<" "<<input[k]<<endl;    
+    
+    
+    
+}       
+    
+    
+    
+    
+    
+}    
+    
+    
+}       
+
+    
+    
+    
+    
+    
+}    
+    
+}    
+    
+}    
+    
+    
+    
+    
+}     
+     
+     
+    
+    
+    
+    
+    
+    
+    
+}
